@@ -57,7 +57,7 @@ def forward(self, x):
 * tqdm==4.66.4
 
 # Test on MNIST
-Our results on MNIST are stored in folder **our_output.**
+Our results on MNIST are stored in folder **our_output.** BSRBF_KAN can converge better than other networks but takes more training time.
 
 | Network  | Training Accuracy | Val Accuracy | Training time (seconds) |
 | ------------- | ------------- |  ------------- | ------------- |
