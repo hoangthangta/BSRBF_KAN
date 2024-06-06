@@ -2,6 +2,13 @@
 
 In this repo, we use Efficient KAN (https://github.com/Blealtan/efficient-kan/ and FAST-KAN (https://github.com/ZiyaoLi/fast-kan/) to create BSRBF_KAN, which combines B-Spline (**BS**) and Radial Basic Function (**RBF**) for Kolmogorov-Arnold Networks (KANs). We will publish our paper soon.
 
+# Requirements 
+* numpy==1.26.4
+* numpyencoder==0.3.0
+* torch==2.3.0+cu118
+* torchvision==0.18.0+cu118
+* tqdm==4.66.4
+  
 # How to combine
 We do layer normalization for the input and then merge 3 outputs (base_output, spline_output, and rbf_output).
 
@@ -27,6 +34,7 @@ def forward(self, x):
         return base_output + rbf_output + spline_output
 ```
 # Training
+
 ## Parameters
 * *mode*: working mode ("train" or "test")
 * *model_name*: type of model (bsrbf_kan, efficient_kan, fast_kan, faster_kan)
@@ -48,13 +56,6 @@ def forward(self, x):
 ```python run_mnist.py --mode "train" --model_name "fast_kan" --epochs 10 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --num_grids 8```
 
 ```python run_mnist.py --mode "train" --model_name "faster_kan" --epochs 10 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --num_grids 8```
-
-# Requirements 
-* numpy==1.26.4
-* numpyencoder==0.3.0
-* torch==2.3.0+cu118
-* torchvision==0.18.0+cu118
-* tqdm==4.66.4
 
 # Test on MNIST
 Our MNIST results are stored in the folder **our_output.** BSRBF_KAN can converge better than other networks but requires more training time.
