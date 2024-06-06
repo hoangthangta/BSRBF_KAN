@@ -36,3 +36,19 @@ def forward(self, x):
 
 # Test on MNIST
 Our results on MNIST are stored in folder **our_output.**
+
+| Network  | Training Accuracy | Val Accuracy | Training time (seconds) |
+| ------------- | ------------- |  ------------- | ------------- |
+| BSRBF_KAN | 0.9999 | **0.9776** | 119 |
+| Fast-KAN | 0.9988 | 0.9762 | 87 |
+| EfficientKAN | 0.9899 | 0.9731 | 91 |
+| Faster-KAN | 0.9878 | 0.9717 | 92 |
+
+# References
+* https://github.com/Blealtan/efficient-kan
+* https://github.com/AthanasiosDelis/faster-kan
+* https://github.com/ZiyaoLi/fast-kan/
+* https://github.com/KindXiaoming/pykan (the original KAN)
+
+# Contact
+If you have any questions, please contact: tahoangthang@gmail.com. If you want to know more about me, please visit website: https://tahoangthang.com.
