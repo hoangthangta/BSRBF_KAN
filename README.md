@@ -39,7 +39,7 @@ def forward(self, x):
 * *spline_order*: The order of spline (default: 3). Use with bsrbf_kan and efficient_kan.
 * *num_grids*: The number of grids, equals grid_size + spline_order (default: 8). Use with fast_kan and faster_kan.
 * *device*: use "cuda" or "cpu"
-* 
+
 ## Commands
 ```python run_mnist.py --mode "train" --model_name "bsrbf_kan" --epochs 10 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --grid_size 5 --spline_order 3```
 
