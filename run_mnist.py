@@ -7,7 +7,7 @@ import torch.optim as optim
 import torchvision
 import torchvision.transforms as transforms
 
-from models import EfficientKAN, FastKAN, BSRBF_KAN, Faster_KAN
+from models import EfficientKAN, FastKAN, BSRBF_KAN, FasterKAN
 from pathlib import Path
 from torch.utils.data import DataLoader
 from tqdm import tqdm
@@ -146,4 +146,4 @@ if __name__ == "__main__":
 
 #python run_mnist.py --mode "train" --model_name "fast_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --num_grids 8
 
-#python run_mnist.py --mode "train" --model_name "faster_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --num_grids 8
+#python run_mnist.py --mode "train" --model_name "faster_kan" --epochs 10 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --num_grids 8
