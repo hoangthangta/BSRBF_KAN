@@ -7,8 +7,8 @@ import torch.nn.functional as F
 class RadialBasisFunction(nn.Module):
     def __init__(
         self,
-        grid_min: float = -2.,
-        grid_max: float = 2.,
+        grid_min: float = -1.5,
+        grid_max: float = 1.5,
         num_grids: int = 8,
         denominator: float = None,  # larger denominators lead to smoother basis
     ):
@@ -144,6 +144,7 @@ class BSRBF_KAN(torch.nn.Module):
             )
     
     def forward(self, x: torch.Tensor):
+        #x = self.drop(x)
         for layer in self.layers: 
             x = layer(x)
         return x
