@@ -36,17 +36,17 @@ def forward(self, x):
 # Training
 
 ## Parameters
-* *mode*: working mode ("train" or "test")
-* *model_name*: type of model (bsrbf_kan, efficient_kan, fast_kan, faster_kan)
-* *epochs*: the number of epochs
-* *batch_size*: the training batch size
+* *mode*: working mode ("train" or "test").
+* *model_name*: type of model (bsrbf_kan, efficient_kan, fast_kan, faster_kan).
+* *epochs*: the number of epochs.
+* *batch_size*: the training batch size.
 * *n_input*: The number of input neurons.
 * *n_hidden*: The number of hidden neurons. We use only 1 hidden layer. You can modify the code (run_mnist.py) for more layers.
 * *n_output*: The number of output neurons (classes). For MNIST, there are 10 classes.
 * *grid_size*: The size of grid (default: 5). Use with bsrbf_kan and efficient_kan.
 * *spline_order*: The order of spline (default: 3). Use with bsrbf_kan and efficient_kan.
 * *num_grids*: The number of grids, equals grid_size + spline_order (default: 8). Use with fast_kan and faster_kan.
-* *device*: use "cuda" or "cpu"
+* *device*: use "cuda" or "CPU".
 
 ## Commands
 ```python run_mnist.py --mode "train" --model_name "bsrbf_kan" --epochs 10 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --grid_size 5 --spline_order 3```
