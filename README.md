@@ -5,8 +5,8 @@ In this repo, we use Efficient KAN (https://github.com/Blealtan/efficient-kan/ a
 # How to combine
 We do layer normalization for the input and then merge 3 outputs (base_output, spline_output, and rbf_output).
 
-```def forward(self, x):
-    
+```
+def forward(self, x):
         # layer normalization
         x = self.layernorm(x)
         
