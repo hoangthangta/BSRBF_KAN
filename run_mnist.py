@@ -7,7 +7,7 @@ import torch.optim as optim
 import torchvision
 import torchvision.transforms as transforms
 
-from models import EfficientKAN, FastKAN, BSRBF_KAN
+from models import EfficientKAN, FastKAN, BSRBF_KAN, Faster_KAN
 from pathlib import Path
 from torch.utils.data import DataLoader
 from tqdm import tqdm
@@ -35,8 +35,8 @@ def run(model_name = 'bsrbf_kan', batch_size = 64, n_input = 28*28, epochs = 10,
     # Create model storage
     output_path = 'output/'
     Path(output_path).mkdir(parents=True, exist_ok=True)
-    saved_model_name = model_name + '.pth'
-    saved_model_history =  model_name + '.json'
+    saved_model_name = model_name + '_mnist.pth'
+    saved_model_history =  model_name + '_mnist.json'
     with open(os.path.join(output_path, saved_model_history), 'w') as fp: pass
 
     # Define model
@@ -46,6 +46,8 @@ def run(model_name = 'bsrbf_kan', batch_size = 64, n_input = 28*28, epochs = 10,
         model = BSRBF_KAN([n_input, n_hidden, n_output], grid_size = grid_size, spline_order = spline_order)
     elif(model_name == 'fast_kan'):
         model = FastKAN([n_input, n_hidden, n_output], num_grids = num_grids)
+    elif(model_name == 'faster_kan'):
+        model = FasterKAN([n_input, n_hidden, n_output], num_grids = num_grids)
     else:
         model = EfficientKAN([n_input, n_hidden, n_output], grid_size = grid_size, spline_order = spline_order)
     model.to(device)
@@ -64,7 +66,7 @@ def run(model_name = 'bsrbf_kan', batch_size = 64, n_input = 28*28, epochs = 10,
         train_accuracy, train_loss = 0, 0
         with tqdm(trainloader) as pbar:
             for i, (images, labels) in enumerate(pbar):
-                images = images.view(-1, 28 * 28).to(device)
+                images = images.view(-1, n_input).to(device)
                 optimizer.zero_grad()
                 output = model(images)
                 loss = criterion(output, labels.to(device))
@@ -83,7 +85,7 @@ def run(model_name = 'bsrbf_kan', batch_size = 64, n_input = 28*28, epochs = 10,
         val_loss, val_accuracy = 0, 0
         with torch.no_grad():
             for images, labels in valloader:
-                images = images.view(-1, 28 * 28).to(device)
+                images = images.view(-1, n_input).to(device)
                 output = model(images)
                 val_loss += criterion(output, labels.to(device)).item()
                 val_accuracy += ((output.argmax(dim=1) == labels.to(device)).float().mean().item())
@@ -105,6 +107,7 @@ def run(model_name = 'bsrbf_kan', batch_size = 64, n_input = 28*28, epochs = 10,
         write_single_dict_to_jsonl_file(output_path + '/' + saved_model_history, {'epoch':epoch, 'val_accuracy':val_accuracy, 'train_accuracy':train_accuracy, 'best_accuracy': best_accuracy, 'best_epoch':best_epoch, 'val_loss': val_loss, 'train_loss':train_loss}, file_access = 'a')
     
     end = time.time()
+    print(f"Training time (s): {end-start}")
     write_single_dict_to_jsonl_file(output_path + '/' + saved_model_history, {'training time':end-start}, file_access = 'a')
     
 def main(args):
@@ -137,8 +140,10 @@ if __name__ == "__main__":
     
     main(args)
     
-#python run_mnist.py --mode "train" --model_name "bsrbf_kan" --epochs 10 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --grid_size 5 --spline_order 3
+#python run_mnist.py --mode "train" --model_name "bsrbf_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --grid_size 5 --spline_order 3
 
-#python run_mnist.py --mode "train" --model_name "efficient_kan" --epochs 10 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --grid_size 5 --spline_order 3
+#python run_mnist.py --mode "train" --model_name "efficient_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --grid_size 5 --spline_order 3
 
-#python run_mnist.py --mode "train" --model_name "fast_kan" --epochs 10 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --num_grids 8
+#python run_mnist.py --mode "train" --model_name "fast_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --num_grids 8
+
+#python run_mnist.py --mode "train" --model_name "faster_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --num_grids 8
