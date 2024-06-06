@@ -58,7 +58,7 @@ def forward(self, x):
 ```python run_mnist.py --mode "train" --model_name "faster_kan" --epochs 10 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --num_grids 8```
 
 # Test on MNIST
-Our MNIST results are stored in the folder **our_output.** BSRBF_KAN can converge better than other networks but requires more training time.
+We trained the models in 10 epochs (with other default parameters; see Commands), then stored our results in the folder **our_output.** BSRBF_KAN can converge better than other networks but requires more training time.
 
 | Network  | Training Accuracy | Val Accuracy | Training time (seconds) |
 | ------------- | ------------- |  ------------- | ------------- |
