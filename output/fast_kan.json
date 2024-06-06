@@ -1,0 +1,11 @@
+{"epoch": 1, "val_accuracy": 0.9338176751592356, "train_accuracy": 0.8875599680170576, "best_accuracy": 0.9338176751592356, "best_epoch": 1, "val_loss": 0.2109088011050395, "train_loss": 0.3704751265813102}
+{"epoch": 2, "val_accuracy": 0.9559116242038217, "train_accuracy": 0.9518590085287847, "best_accuracy": 0.9559116242038217, "best_epoch": 2, "val_loss": 0.14344342686473185, "train_loss": 0.1548751306587032}
+{"epoch": 3, "val_accuracy": 0.9624800955414012, "train_accuracy": 0.9703824626865671, "best_accuracy": 0.9624800955414012, "best_epoch": 3, "val_loss": 0.1174025807454055, "train_loss": 0.09796440821371354}
+{"epoch": 4, "val_accuracy": 0.9692476114649682, "train_accuracy": 0.9790778251599147, "best_accuracy": 0.9692476114649682, "best_epoch": 4, "val_loss": 0.09656244929795373, "train_loss": 0.06942625595048181}
+{"epoch": 5, "val_accuracy": 0.9717356687898089, "train_accuracy": 0.9858075692963753, "best_accuracy": 0.9717356687898089, "best_epoch": 5, "val_loss": 0.09016082126381778, "train_loss": 0.048998940955978565}
+{"epoch": 6, "val_accuracy": 0.9684514331210191, "train_accuracy": 0.9907715884861408, "best_accuracy": 0.9717356687898089, "best_epoch": 5, "val_loss": 0.09968476278883862, "train_loss": 0.03504619475847273}
+{"epoch": 7, "val_accuracy": 0.972531847133758, "train_accuracy": 0.9942197494669509, "best_accuracy": 0.972531847133758, "best_epoch": 7, "val_loss": 0.08586397608163748, "train_loss": 0.025694303153736043}
+{"epoch": 8, "val_accuracy": 0.9740246815286624, "train_accuracy": 0.9966684434968017, "best_accuracy": 0.9740246815286624, "best_epoch": 8, "val_loss": 0.08155422996899045, "train_loss": 0.018680610806807312}
+{"epoch": 9, "val_accuracy": 0.9736265923566879, "train_accuracy": 0.997984408315565, "best_accuracy": 0.9740246815286624, "best_epoch": 8, "val_loss": 0.08680125476692722, "train_loss": 0.01435692344163197}
+{"epoch": 10, "val_accuracy": 0.9762141719745223, "train_accuracy": 0.9988339552238806, "best_accuracy": 0.9762141719745223, "best_epoch": 10, "val_loss": 0.08017653928277903, "train_loss": 0.011039506973647105}
+{"training time": 87.22874283790588}
