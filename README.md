@@ -62,13 +62,13 @@ def forward(self, x):
 # Test on MNIST
 We trained the models in 15 epochs on GeForce RTX 3060 Ti (with other default parameters; see Commands), then stored our results in the folder **our_output.** BSRBF_KAN can converge better than other networks but requires more training time.
 
-| Network  | Training Accuracy | Val Accuracy | Training time (seconds) |
-| ------------- | ------------- |  ------------- | ------------- |
-| BSRBF_KAN | - | - | - |
-| Fast-KAN | - | - | - |
-| EfficientKAN - | - | - |
-| Faster-KAN - | - | - |
-| gottlieb_kan - | - | - |
+ | Network | Training Accuracy | Val Accuracy | Macro F1 | Macro Precision | Macro Recall | Training time (seconds) |
+ | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+ | bsrbf_kan | **1.0** | **0.9763** | **0.976** | **0.9761** | **0.9759** | 222 |
+ | fast_kan | 0.9994 | 0.9738 | 0.9734 | 0.9735 | 0.9734 | 102 |
+ | faster_kan | 0.9852 | 0.9738 | 0.9736 | 0.9737 | 0.9735 | 93 |
+ | efficient_kan | 0.9934 | 0.9754 | 0.975 | 0.975 | 0.9751 | 122 |
+ | gottlieb_kan | 0.9871 | 0.9711 | 0.9708 | 0.9708 | 0.9708 | **91** |
 
 # References
 * https://github.com/Blealtan/efficient-kan
