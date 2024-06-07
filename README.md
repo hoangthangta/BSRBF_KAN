@@ -18,20 +18,20 @@ def forward(self, x):
         x = self.layernorm(x)
         
         # base
-        #bias = torch.randn(self.output_dim)
-        #base_output = F.linear(self.base_activation(x), self.base_weight, bias)
         base_output = F.linear(self.base_activation(x), self.base_weight)
         
         # b_splines
-        spline_output = F.linear(self.b_splines(x).view(x.size(0), -1), self.spline_weight)
+        bs_output = self.b_splines(x).view(x.size(0), -1)
         
         # rbf
         rbf_output = self.rbf(x)
         rbf_output = torch.reshape(rbf_output, (rbf_output.shape[0], -1))
-        rbf_output = F.linear(rbf_output, self.spline_weight)
-        #rbf_output = self.linear(rbf_output)
+        
+        # combine
+        bsrbf_output = bs_output + rbf_output
+        bsrbf_output = F.linear(bsrbf_output, self.spline_weight)
 
-        return base_output + rbf_output + spline_output
+        return base_output + bsrbf_output
 ```
 # Training
 
@@ -75,6 +75,7 @@ We trained the models in 15 epochs on GeForce RTX 3060 Ti (with other default pa
 * https://github.com/Blealtan/efficient-kan
 * https://github.com/AthanasiosDelis/faster-kan
 * https://github.com/ZiyaoLi/fast-kan/
+* https://github.com/seydi1370/Basis_Functions
 * https://github.com/KindXiaoming/pykan (the original KAN)
 
 # Acknowledgements
