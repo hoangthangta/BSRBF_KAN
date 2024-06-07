@@ -10,7 +10,7 @@ In this repo, we use Efficient KAN (https://github.com/Blealtan/efficient-kan/ a
 * tqdm==4.66.4
   
 # How to combine
-We do layer normalization for the input and then combine 3 outputs (base_output, spline_output, and rbf_output).
+We do layer normalization for the input and then combine 3 outputs (base_output, bs_output, and rbf_output).
 
 ```
 def forward(self, x):
