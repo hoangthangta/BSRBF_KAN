@@ -62,10 +62,10 @@ We trained the models in 15 epochs on GeForce RTX 3060 Ti (with other default pa
 
 | Network  | Training Accuracy | Val Accuracy | Training time (seconds) |
 | ------------- | ------------- |  ------------- | ------------- |
-| BSRBF_KAN | 1.0 | **0.9755** | 205 |
-| Fast-KAN | 0.9993 | 0.9727 | 150 |
-| EfficientKAN | 0.9939 | 0.9736 | 169 |
-| Faster-KAN | 0.9855 | 0.9745 | 142 |
+| BSRBF_KAN | - | - | - |
+| Fast-KAN | - | - | - |
+| EfficientKAN - | - | - |
+| Faster-KAN - | - | - |
 
 # References
 * https://github.com/Blealtan/efficient-kan
