@@ -88,7 +88,7 @@ We trained the models in 15 epochs on GeForce RTX 3060 Ti (with other default pa
 * https://github.com/KindXiaoming/pykan (the original KAN)
 
 # Acknowledgements
-We especially thank the contributions of https://github.com/Blealtan/efficient-kan and https://github.com/ZiyaoLi/fast-kan/ for their great work in KANs.
+We especially thank the contributions of https://github.com/Blealtan/efficient-kan, https://github.com/ZiyaoLi/fast-kan/, and https://github.com/seydi1370/Basis_Functions for their great work in KANs.
 
 # Contact
 If you have any questions, please contact: tahoangthang@gmail.com. If you want to know more about me, please visit website: https://tahoangthang.com.
