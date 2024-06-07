@@ -65,7 +65,7 @@ We trained the models in 15 epochs on GeForce RTX 3060 Ti (with other default pa
 ## Best of 5 training times
  | Network | Training Accuracy | Val Accuracy | Macro F1 | Macro Precision | Macro Recall | Training time (seconds) |
  | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
- | bsrbf_kan | **1.0** | **0.9763** | **0.976** | **0.9761** | **0.9759** | 222 |
+ | **bsrbf_kan** | **1.0** | **0.9763** | **0.976** | **0.9761** | **0.9759** | 222 |
  | fast_kan | 0.9994 | 0.9738 | 0.9734 | 0.9735 | 0.9734 | 102 |
  | faster_kan | 0.9852 | 0.9738 | 0.9736 | 0.9737 | 0.9735 | 93 |
  | efficient_kan | 0.9934 | 0.9754 | 0.975 | 0.975 | 0.9751 | 122 |
@@ -74,7 +74,7 @@ We trained the models in 15 epochs on GeForce RTX 3060 Ti (with other default pa
 ## Average of 5 training times
  | Network | Training Accuracy | Val Accuracy | Macro F1 | Macro Precision | Macro Recall | Training time (seconds) |
  | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
- | bsrbf_kan | **1.0** | **0.9755** | **0.9751** | **0.9752** | **0.975** | 231 |
+ | **bsrbf_kan** | **1.0** | **0.9755** | **0.9751** | **0.9752** | **0.975** | 231 |
  | fast_kan | 0.9994 | 0.9725 | 0.9721 | 0.9722 | 0.9721 | 101 |
  | faster_kan | 0.9848 | 0.9728 | 0.9725 | 0.9726 | 0.9724 | 93 |
  | efficient_kan | 0.9937 | 0.9737 | 0.9733 | 0.9734 | 0.9733 | 120 |
