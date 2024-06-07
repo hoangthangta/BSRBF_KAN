@@ -58,14 +58,14 @@ def forward(self, x):
 ```python run_mnist.py --mode "train" --model_name "faster_kan" --epochs 10 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --num_grids 8```
 
 # Test on MNIST
-We trained the models in 10 epochs on GeForce RTX 3060 Ti (with other default parameters; see Commands), then stored our results in the folder **our_output.** BSRBF_KAN can converge better than other networks but requires more training time.
+We trained the models in 15 epochs on GeForce RTX 3060 Ti (with other default parameters; see Commands), then stored our results in the folder **our_output.** BSRBF_KAN can converge better than other networks but requires more training time.
 
 | Network  | Training Accuracy | Val Accuracy | Training time (seconds) |
 | ------------- | ------------- |  ------------- | ------------- |
-| BSRBF_KAN | 0.9999 | **0.9776** | 119 |
-| Fast-KAN | 0.9988 | 0.9762 | 87 |
-| EfficientKAN | 0.9899 | 0.9731 | 91 |
-| Faster-KAN | 0.9878 | 0.9717 | 92 |
+| BSRBF_KAN | 1.0 | **0.9755** | 205 |
+| Fast-KAN | 0.9993 | 0.9727 | 150 |
+| EfficientKAN | 0.9939 | 0.9736 | 169 |
+| Faster-KAN | 0.9855 | 0.9745 | 142 |
 
 # References
 * https://github.com/Blealtan/efficient-kan
