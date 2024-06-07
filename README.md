@@ -46,16 +46,16 @@ def forward(self, x):
 * *grid_size*: The size of grid (default: 5). Use with bsrbf_kan and efficient_kan.
 * *spline_order*: The order of spline (default: 3). Use with bsrbf_kan and efficient_kan.
 * *num_grids*: The number of grids, equals grid_size + spline_order (default: 8). Use with fast_kan and faster_kan.
-* *device*: use "cuda" or "CPU".
+* *device*: use "cuda" or "cpu".
 
 ## Commands
-```python run_mnist.py --mode "train" --model_name "bsrbf_kan" --epochs 10 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --grid_size 5 --spline_order 3```
+```python run_mnist.py --mode "train" --model_name "bsrbf_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --grid_size 5 --spline_order 3```
 
-```python run_mnist.py --mode "train" --model_name "efficient_kan" --epochs 10 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --grid_size 5 --spline_order 3```
+```python run_mnist.py --mode "train" --model_name "efficient_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --grid_size 5 --spline_order 3```
 
-```python run_mnist.py --mode "train" --model_name "fast_kan" --epochs 10 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --num_grids 8```
+```python run_mnist.py --mode "train" --model_name "fast_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --num_grids 8```
 
-```python run_mnist.py --mode "train" --model_name "faster_kan" --epochs 10 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --num_grids 8```
+```python run_mnist.py --mode "train" --model_name "faster_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --num_grids 8```
 
 # Test on MNIST
 We trained the models in 15 epochs on GeForce RTX 3060 Ti (with other default parameters; see Commands), then stored our results in the folder **our_output.** BSRBF_KAN can converge better than other networks but requires more training time.
