@@ -62,6 +62,7 @@ def forward(self, x):
 # Test on MNIST
 We trained the models in 15 epochs on GeForce RTX 3060 Ti (with other default parameters; see Commands), then stored our results in the folder **our_output.** BSRBF_KAN can converge better than other networks but requires more training time.
 
+## Best of 5 training times
  | Network | Training Accuracy | Val Accuracy | Macro F1 | Macro Precision | Macro Recall | Training time (seconds) |
  | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
  | bsrbf_kan | **1.0** | **0.9763** | **0.976** | **0.9761** | **0.9759** | 222 |
