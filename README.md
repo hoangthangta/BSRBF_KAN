@@ -57,6 +57,8 @@ def forward(self, x):
 
 ```python run_mnist.py --mode "train" --model_name "faster_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --num_grids 8```
 
+```python run_mnist.py --mode "train" --model_name "gottlieb_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --spline_order 3```
+
 # Test on MNIST
 We trained the models in 15 epochs on GeForce RTX 3060 Ti (with other default parameters; see Commands), then stored our results in the folder **our_output.** BSRBF_KAN can converge better than other networks but requires more training time.
 
@@ -66,6 +68,7 @@ We trained the models in 15 epochs on GeForce RTX 3060 Ti (with other default pa
 | Fast-KAN | - | - | - |
 | EfficientKAN - | - | - |
 | Faster-KAN - | - | - |
+| gottlieb_kan - | - | - |
 
 # References
 * https://github.com/Blealtan/efficient-kan
