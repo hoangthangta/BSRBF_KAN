@@ -107,15 +107,24 @@ class BSRBF_KANLayer(nn.Module):
         base_output = F.linear(self.base_activation(x), self.base_weight)
         
         # b_splines
-        spline_output = F.linear(self.b_splines(x).view(x.size(0), -1), self.spline_weight)
+        '''spline_output = F.linear(self.b_splines(x).view(x.size(0), -1), self.spline_weight)'''
+        # rbf
+        '''rbf_output = self.rbf(x)
+        rbf_output = torch.reshape(rbf_output, (rbf_output.shape[0], -1))
+        rbf_output = F.linear(rbf_output, self.spline_weight)'''
+        
+        # b_splines
+        bs_output = self.b_splines(x).view(x.size(0), -1)
         
         # rbf
         rbf_output = self.rbf(x)
         rbf_output = torch.reshape(rbf_output, (rbf_output.shape[0], -1))
-        rbf_output = F.linear(rbf_output, self.spline_weight)
-        #rbf_output = self.linear(rbf_output)
+        
+        # combine
+        bsrbf_output = bs_output + rbf_output
+        bsrbf_output = F.linear(bsrbf_output, self.spline_weight)
 
-        return base_output + rbf_output + spline_output
+        return base_output + bsrbf_output
 
 class BSRBF_KAN(torch.nn.Module):
     
