@@ -70,7 +70,7 @@ We trained the models in **15 epochs on GeForce RTX 3060 Ti** (with other defaul
  | faster_kan | 98.52 | 97.38 | 97.36 | 97.37 | 97.35 | 93 |
  | efficient_kan | 99.34 | 97.54 | 97.5 | 97.5 | 97.51 | 122 |
  | gottlieb_kan | 98.71 | 97.11 | 97.08 | 97.08 | 97.08 | **91** |
- | ori_gottlieb_kan | 99.66 | **97.78** | **97.74** | **97.74** | **97.73** | 269 |
+ | original_gottlieb_kan | 99.66 | **97.78** | **97.74** | **97.74** | **97.73** | 269 |
 
 ## Average of 5 training times
   | Network | Training Accuracy | Val Accuracy | Macro F1 | Macro Precision | Macro Recall | Training time (seconds) |
@@ -80,7 +80,7 @@ We trained the models in **15 epochs on GeForce RTX 3060 Ti** (with other defaul
  | faster_kan | 98.48 ± 0.01 | 97.28 ± 0.06 | 97.25 ± 0.06 | 97.26 ± 0.06 | 97.24 ± 0.06 | 93 |
  | efficient_kan | 99.37 ± 0.04 | 97.37 ± 0.07 | 97.33 ± 0.07 | 97.34 ± 0.07 | 97.33 ± 0.07 | 120 |
  | gottlieb_kan | 97.30 ± 0.72 | 96.25 ± 0.43 | 96.18 ± 0.44 | 96.20 ± 0.44 | 96.18 ± 0.44 | **91** |
- | ori_gottlieb_kan | 98.44 ± 0.61 | 97.19 ± 0.22 | 97.14 ± 0.23 | 97.16 ± 0.22 | 97.13 ± 0.23 | 221 |
+ | original_gottlieb_kan | 98.44 ± 0.61 | 97.19 ± 0.22 | 97.14 ± 0.23 | 97.16 ± 0.22 | 97.13 ± 0.23 | 221 |
  
 # References
 * https://github.com/Blealtan/efficient-kan
