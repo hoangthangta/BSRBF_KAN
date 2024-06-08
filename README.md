@@ -63,22 +63,22 @@ def forward(self, x):
 We trained the models in **15 epochs on GeForce RTX 3060 Ti** (with other default parameters; see Commands). In general, BSRBF_KAN is stable and allows it to converge better than other networks, but it requires more training time than other networks, except Gottlieb_KAN. Gottlieb_KAN can achieve the best accuracy values; however, its performance is very unstable.
 
 ## Best of 5 training times
-| Network | Training Accuracy | Val Accuracy | Macro F1 | Macro Precision | Macro Recall | Training time (seconds) |
- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
- | bsrbf_kan | **100.0** | 97.63 | 97.6 | 97.61 | 97.59 | 222 |
- | fast_kan | 99.94 | 97.38 | 97.34 | 97.35 | 97.34 | 102 |
- | faster_kan | 98.52 | 97.38 | 97.36 | 97.37 | 97.35 | **93** |
- | efficient_kan | 99.34 | 97.54 | 97.5 | 97.5 | 97.51 | 122 |
- | gottlieb_kan | 99.66 | **97.78** | **97.74** | **97.74** | **97.73** | 269 |
+| Network | Total Layers | Training Accuracy | Val Accuracy | Macro F1 | Macro Precision | Macro Recall | Training time (seconds) |
+ | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+ | bsrbf_kan | 2 | **100.0** | 97.63 | 97.6 | 97.61 | 97.59 | 222 |
+ | fast_kan | 2 | 99.94 | 97.38 | 97.34 | 97.35 | 97.34 | 102 |
+ | faster_kan | 2 |98.52 | 97.38 | 97.36 | 97.37 | 97.35 | **93** |
+ | efficient_kan | 2 | 99.34 | 97.54 | 97.5 | 97.5 | 97.51 | 122 |
+ | gottlieb_kan | 2 | 99.66 | **97.78** | **97.74** | **97.74** | **97.73** | 269 |
 
 ## Average of 5 training times
-  | Network | Training Accuracy | Val Accuracy | Macro F1 | Macro Precision | Macro Recall | Training time (seconds) |
- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
- | bsrbf_kan | **100.00 ± 0.00** | **97.55 ± 0.03** | **97.51 ± 0.03** | **97.52 ± 0.03** | **97.50 ± 0.03** | 231 |
- | fast_kan | 99.94 ± 0.01 | 97.25 ± 0.03 | 97.21 ± 0.03 | 97.22 ± 0.03 | 97.21 ± 0.03 | 101 |
- | faster_kan | 98.48 ± 0.01 | 97.28 ± 0.06 | 97.25 ± 0.06 | 97.26 ± 0.06 | 97.24 ± 0.06 | **93** |
- | efficient_kan | 99.37 ± 0.04 | 97.37 ± 0.07 | 97.33 ± 0.07 | 97.34 ± 0.07 | 97.33 ± 0.07 | 120 |
- | gottlieb_kan | 98.44 ± 0.61 | 97.19 ± 0.22 | 97.14 ± 0.23 | 97.16 ± 0.22 | 97.13 ± 0.23 | 221 |
+ | Network | Total Layers | Training Accuracy | Val Accuracy | Macro F1 | Macro Precision | Macro Recall | Training time (seconds) |
+ | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+ | bsrbf_kan | 2 | **100.00 ± 0.00** | **97.55 ± 0.03** | **97.51 ± 0.03** | **97.52 ± 0.03** | **97.50 ± 0.03** | 231 |
+ | fast_kan | 2 | 99.94 ± 0.01 | 97.25 ± 0.03 | 97.21 ± 0.03 | 97.22 ± 0.03 | 97.21 ± 0.03 | 101 |
+ | faster_kan | 2 | 98.48 ± 0.01 | 97.28 ± 0.06 | 97.25 ± 0.06 | 97.26 ± 0.06 | 97.24 ± 0.06 | **93** |
+ | efficient_kan | 2 | 99.37 ± 0.04 | 97.37 ± 0.07 | 97.33 ± 0.07 | 97.34 ± 0.07 | 97.33 ± 0.07 | 120 |
+ | gottlieb_kan | 3 | 98.44 ± 0.61 | 97.19 ± 0.22 | 97.14 ± 0.23 | 97.16 ± 0.22 | 97.13 ± 0.23 | 221 |
  
 # References
 * https://github.com/Blealtan/efficient-kan
