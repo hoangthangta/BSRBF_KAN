@@ -63,23 +63,23 @@ def forward(self, x):
 We trained the models in **15 epochs on GeForce RTX 3060 Ti** (with other default parameters; see Commands). In general, BSRBF_KAN can converge better than other networks but requires more training time. You can use dropout to avoid overfitting.
 
 ## Best of 5 training times
- | Network | Training Accuracy | Val Accuracy | Macro F1 | Macro Precision | Macro Recall | Training time (seconds) |
+| Network | Training Accuracy | Val Accuracy | Macro F1 | Macro Precision | Macro Recall | Training time (seconds) |
  | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
- | **bsrbf_kan** | **1.0** | 0.9763 | 0.976 | 0.9761 | 0.9759 | 222 |
- | fast_kan | 0.9994 | 0.9738 | 0.9734 | 0.9735 | 0.9734 | 102 |
- | faster_kan | 0.9852 | 0.9738 | 0.9736 | 0.9737 | 0.9735 | 93 |
- | efficient_kan | 0.9934 | 0.9754 | 0.975 | 0.975 | 0.9751 | 122 |
- | gottlieb_kan | 0.9871 | 0.9711 | 0.9708 | 0.9708 | 0.9708 | **91** |
- | ori_gottlieb_kan | 0.9966 | **0.9778** | **0.9774** | **0.9774** | **0.9773** | 269 |
+ | bsrbf_kan | **100.0** | 97.63 | 97.6 | 97.61 | 97.59 | 222 |
+ | fast_kan | 99.94 | 97.38 | 97.34 | 97.35 | 97.34 | 102 |
+ | faster_kan | 98.52 | 97.38 | 97.36 | 97.37 | 97.35 | 93 |
+ | efficient_kan | 99.34 | 97.54 | 97.5 | 97.5 | 97.51 | 122 |
+ | gottlieb_kan | 98.71 | 97.11 | 97.08 | 97.08 | 97.08 | **91** |
+ | ori_gottlieb_kan | 99.66 | **97.78** | **97.74** | **97.74** | **97.73** | 269 |
 
 ## Average of 5 training times
   | Network | Training Accuracy | Val Accuracy | Macro F1 | Macro Precision | Macro Recall | Training time (seconds) |
  | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
- | bsrbf_kan | 100.00 ± 0.00 | 97.55 ± 0.03 | 97.51 ± 0.03 | 97.52 ± 0.03 | 97.50 ± 0.03 | 231 |
+ | bsrbf_kan | **100.00 ± 0.00** | **97.55 ± 0.03** | **97.51 ± 0.03** | **97.52 ± 0.03** | **97.50 ± 0.03** | 231 |
  | fast_kan | 99.94 ± 0.01 | 97.25 ± 0.03 | 97.21 ± 0.03 | 97.22 ± 0.03 | 97.21 ± 0.03 | 101 |
  | faster_kan | 98.48 ± 0.01 | 97.28 ± 0.06 | 97.25 ± 0.06 | 97.26 ± 0.06 | 97.24 ± 0.06 | 93 |
  | efficient_kan | 99.37 ± 0.04 | 97.37 ± 0.07 | 97.33 ± 0.07 | 97.34 ± 0.07 | 97.33 ± 0.07 | 120 |
- | gottlieb_kan | 97.30 ± 0.72 | 96.25 ± 0.43 | 96.18 ± 0.44 | 96.20 ± 0.44 | 96.18 ± 0.44 | 91 |
+ | gottlieb_kan | 97.30 ± 0.72 | 96.25 ± 0.43 | 96.18 ± 0.44 | 96.20 ± 0.44 | 96.18 ± 0.44 | **91** |
  | ori_gottlieb_kan | 98.44 ± 0.61 | 97.19 ± 0.22 | 97.14 ± 0.23 | 97.16 ± 0.22 | 97.13 ± 0.23 | 221 |
  
 # References
