@@ -60,7 +60,7 @@ def forward(self, x):
 ```python run_mnist.py --mode "train" --model_name "gottlieb_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --spline_order 3```
 
 # Test on MNIST
-We trained the models in **15 epochs on GeForce RTX 3060 Ti** (with other default parameters; see Commands). In general, BSRBF_KAN is stable and allows it to converge better than other networks, but it requires more training time than Gottlieb_KAN. You can get the best accuracy with Gottlieb_KAN; however, its performance is unstable.
+We trained the models in **15 epochs on GeForce RTX 3060 Ti** (with other default parameters; see Commands). In general, BSRBF_KAN is stable and allows it to converge better than other networks, but it requires more training time than other networks, except Gottlieb_KAN. You can get the best accuracy with Gottlieb_KAN; however, its performance is unstable.
 
 ## Best of 5 training times
 | Network | Training Accuracy | Val Accuracy | Macro F1 | Macro Precision | Macro Recall | Training time (seconds) |
