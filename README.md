@@ -81,6 +81,9 @@ We trained the models in **15 epochs on GeForce RTX 3060 Ti** (with other defaul
  | faster_kan | 2 (768, 64, 10) | 98.48 ± 0.01 | 97.28 ± 0.06 | 97.25 ± 0.06 | 97.26 ± 0.06 | 97.24 ± 0.06 | **93** |
  | efficient_kan | 2 (768, 64, 10) | 99.37 ± 0.04 | 97.37 ± 0.07 | 97.33 ± 0.07 | 97.34 ± 0.07 | 97.33 ± 0.07 | 120 |
  | gottlieb_kan | 3 (768, 64, 64, 10) | 98.44 ± 0.61 | 97.19 ± 0.22 | 97.14 ± 0.23 | 97.16 ± 0.22 | 97.13 ± 0.23 | 221 |
+
+# Test on Fashion_MNIST
+Updating...
  
 # References
 * https://github.com/Blealtan/efficient-kan
