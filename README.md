@@ -24,8 +24,7 @@ def forward(self, x):
         bs_output = self.b_splines(x).view(x.size(0), -1)
         
         # rbf
-        rbf_output = self.rbf(x)
-        rbf_output = torch.reshape(rbf_output, (rbf_output.shape[0], -1))
+        rbf_output = self.rbf(x).view(x.size(0), -1)
         
         # combine
         bsrbf_output = bs_output + rbf_output
@@ -37,6 +36,7 @@ def forward(self, x):
 
 ## Parameters
 * *mode*: working mode ("train" or "test").
+* *ds_name*: dataset name ("mnist" or "fashion_mnist").
 * *model_name*: type of model (bsrbf_kan, efficient_kan, fast_kan, faster_kan).
 * *epochs*: the number of epochs.
 * *batch_size*: the training batch size.
@@ -49,15 +49,17 @@ def forward(self, x):
 * *device*: use "cuda" or "cpu".
 
 ## Commands
-```python run_mnist.py --mode "train" --model_name "bsrbf_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --grid_size 5 --spline_order 3```
+```python run.py --mode "train" --ds_name "mnist" --model_name "bsrbf_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --grid_size 5 --spline_order 3```
 
-```python run_mnist.py --mode "train" --model_name "efficient_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --grid_size 5 --spline_order 3```
+```python run.py --mode "train" --ds_name "mnist" --model_name "efficient_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --grid_size 5 --spline_order 3```
 
-```python run_mnist.py --mode "train" --model_name "fast_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --num_grids 8```
+```python run.py --mode "train" --ds_name "mnist" --model_name "fast_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --num_grids 8```
 
-```python run_mnist.py --mode "train" --model_name "faster_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --num_grids 8```
+```python run.py --mode "train" --ds_name "mnist" --model_name "faster_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --num_grids 8```
 
-```python run_mnist.py --mode "train" --model_name "gottlieb_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --spline_order 3```
+```python run.py --mode "train" --ds_name "mnist" --model_name "gottlieb_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --spline_order 3```
+
+```python run.py --mode "train" --ds_name "mnist" --model_name "mlp" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10```
 
 # Test on MNIST
 We trained the models in **15 epochs on GeForce RTX 3060 Ti** (with other default parameters; see Commands). In general, BSRBF_KAN is stable and converges the best, but it requires more training time than other networks except Gottlieb_KAN. While achieving the highest accuracy values, Gottlieb_KAN's performance is unstable.
