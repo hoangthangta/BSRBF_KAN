@@ -64,7 +64,7 @@ def forward(self, x):
 # Test on MNIST
 We trained the models in **15 epochs on GeForce RTX 3060 Ti** (with other default parameters; see Commands). In general, BSRBF_KAN is stable and converges the best, but it requires more training time than other networks except Gottlieb_KAN. While achieving the highest accuracy values, Gottlieb_KAN's performance is unstable.
 
-## Best of 5 training times
+## Best of 5 training sessions
 | Network | Total Layers | Training Accuracy | Val Accuracy | Macro F1 | Macro Precision | Macro Recall | Training time (seconds) |
  | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
  | bsrbf_kan | 2 (768, 64, 10) | **100.0** | 97.63 | 97.6 | 97.61 | 97.59 | 222 |
@@ -73,7 +73,7 @@ We trained the models in **15 epochs on GeForce RTX 3060 Ti** (with other defaul
  | efficient_kan | 2 (768, 64, 10) | 99.34 | 97.54 | 97.5 | 97.5 | 97.51 | 122 |
  | gottlieb_kan | 3 (768, 64, 64, 10) | 99.66 | **97.78** | **97.74** | **97.74** | **97.73** | 269 |
 
-## Average of 5 training times
+## Average of 5 training sessions
  | Network | Total Layers | Training Accuracy | Val Accuracy | Macro F1 | Macro Precision | Macro Recall | Training time (seconds) |
  | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
  | bsrbf_kan | 2 (768, 64, 10) | **100.00 ± 0.00** | **97.55 ± 0.03** | **97.51 ± 0.03** | **97.52 ± 0.03** | **97.50 ± 0.03** | 231 |
