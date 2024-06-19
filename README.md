@@ -1,6 +1,6 @@
 # BSRBF_KAN
 
-In this repo, we use Efficient KAN (https://github.com/Blealtan/efficient-kan/ and FAST-KAN (https://github.com/ZiyaoLi/fast-kan/) to create BSRBF_KAN, which combines B-Spline (**BS**) and Radial Basic Function (**RBF**) for Kolmogorov-Arnold Networks (KANs). We will publish our paper soon.
+In this repo, we use Efficient KAN (https://github.com/Blealtan/efficient-kan/ and FAST-KAN (https://github.com/ZiyaoLi/fast-kan/) to create BSRBF_KAN, which combines B-Spline (**BS**) and Radial Basic Function (**RBF**) for Kolmogorov-Arnold Networks (KANs). Our paper is available at https://arxiv.org/abs/2406.11173.
 
 # Requirements 
 * numpy==1.26.4
@@ -116,8 +116,6 @@ Training on MNIST seems easy, making it difficult to compare BSRBF-KAN accuratel
 We especially thank the contributions of https://github.com/Blealtan/efficient-kan, https://github.com/ZiyaoLi/fast-kan/, and https://github.com/seydi1370/Basis_Functions for their great work in KANs.
 
 # Paper
-We are updating the paper.
-
 ```
 @misc{ta2024bsrbfkan,
       title={BSRBF-KAN: A combination of B-splines and Radial Basic Functions in Kolmogorov-Arnold Networks}, 
