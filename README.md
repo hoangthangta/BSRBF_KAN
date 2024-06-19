@@ -116,16 +116,18 @@ Training on MNIST seems easy, making it difficult to compare BSRBF-KAN accuratel
 We especially thank the contributions of https://github.com/Blealtan/efficient-kan, https://github.com/ZiyaoLi/fast-kan/, and https://github.com/seydi1370/Basis_Functions for their great work in KANs.
 
 # Paper
-We are updating version 2.
+We are updating the paper.
 
-```@misc{ta2024bsrbfkan,
+```
+@misc{ta2024bsrbfkan,
       title={BSRBF-KAN: A combination of B-splines and Radial Basic Functions in Kolmogorov-Arnold Networks}, 
       author={Hoang-Thang Ta},
       year={2024},
       eprint={2406.11173},
       archivePrefix={arXiv}
       }
-}```
+}
+```
 
 # Contact
 If you have any questions, please contact: tahoangthang@gmail.com. If you want to know more about me, please visit website: https://tahoangthang.com.
