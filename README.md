@@ -66,7 +66,7 @@ We trained the models in **15 epochs on GeForce RTX 3060 Ti** (with other defaul
 
 ## Best of 5 training sessions
 | Network | Total Layers | Training Accuracy | Val Accuracy | Macro F1 | Macro Precision | Macro Recall | Training time (seconds) | Params
- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+ | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
  | bsrbf_kan | 2 (768, 64, 10) | **100.0** | 97.63 | 97.6 | 97.61 | 97.59 | 222 | 459040 |
  | fast_kan | 2 (768, 64, 10) | 99.94 | 97.38 | 97.34 | 97.35 | 97.34 | 102 | 459114 |
  | faster_kan | 2 (768, 64, 10) | 98.52 | 97.38 | 97.36 | 97.37 | 97.35 | **93** | 408224 |
