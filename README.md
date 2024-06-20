@@ -85,8 +85,8 @@ We trained the models in **15 epochs on GeForce RTX 3060 Ti** (with other defaul
  | gottlieb_kan | 3 (768, 64, 64, 10) | 98.44 ± 0.61 | 97.19 ± 0.22 | 97.14 ± 0.23 | 97.16 ± 0.22 | 97.13 ± 0.23 | 221 |
  | mlp | 2 (768, 64, 10) | 99.44 ± 0.01 | **97.62 ± 0.03** | **97.59 ± 0.03** | - | - | 181 |
 
-# Test on FashionMNIST
-Training on MNIST seems easy, making it difficult to compare BSRBF-KAN accurately to other models; therefore, we would like to work on FashionMNIST. We trained the models in **25 epochs on GeForce RTX 3060 Ti** (with other default parameters; see Commands). Like MNIST, BSRBF_KAN is also stable and converges the best. FastKAN achieves the best performance.
+# Test on Fashion-MNIST
+Training on MNIST seems easy, making it difficult to compare BSRBF-KAN accurately to other models; therefore, we would like to work on Fashion-MNIST. We trained the models in **25 epochs on GeForce RTX 3060 Ti** (with other default parameters; see Commands). Like MNIST, BSRBF_KAN is also stable and converges the best. FastKAN achieves the best performance.
 
 ## Best of 5 training sessions
  | Network | Training Accuracy | Val Accuracy | Macro F1 | Macro Precision | Macro Recall | Training time (seconds) |
@@ -107,7 +107,9 @@ Training on MNIST seems easy, making it difficult to compare BSRBF-KAN accuratel
  | efficient_kan | 94.76 ± 0.06 | 88.92 ± 0.08 | 88.85 ± 0.09 | 88.85 ± 0.09 | 88.91 ± 0.09 | 183 |
  | gottlieb_kan | 90.66 ± 1.08 | 87.16 ± 0.24 | 87.07 ± 0.25 | 87.07 ± 0.25 | 87.13 ± 0.25 | 238 |
  | mlp | 93.56 ± 0.05 | 88.39 ± 0.06 | 88.36 ± 0.05 | 88.35 ± 0.05 | 88.41 ± 0.05 | **148** |
- 
+
+# # Test on MNIST + Fashion-MNIST
+
 # References
 * https://github.com/Blealtan/efficient-kan
 * https://github.com/AthanasiosDelis/faster-kan
