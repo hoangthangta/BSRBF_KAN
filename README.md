@@ -92,7 +92,7 @@ Training on MNIST seems easy, making it difficult to compare BSRBF-KAN accuratel
  | Network | Training Accuracy | Val Accuracy | Macro F1 | Macro Precision | Macro Recall | Training time (seconds) |
  | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
  | bsrbf_kan | **99.3** | 89.59 | 89.54 | 89.55 | 89.57 | 219 |
- | fast_kan | 98.27 | **89.62** | 89.6 | 89.6 | 89.63 | 160 |
+ | fast_kan | 98.27 | **89.62** | **89.6** | **89.6** | **89.63** | 160 |
  | faster_kan | 94.4 | 89.39 | 89.3 | 89.31 | 89.34 | 157 |
  | efficient_kan | 94.83 | 89.11 | 89.04 | 89.03 | 89.09 | 182 |
  | gottlieb_kan | 93.79 | 87.69 | 87.61 | 87.6 | 87.66 | 241 |
