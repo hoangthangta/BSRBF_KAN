@@ -108,7 +108,8 @@ Training on MNIST seems easy, making it difficult to compare BSRBF-KAN accuratel
  | gottlieb_kan | 90.66 ± 1.08 | 87.16 ± 0.24 | 87.07 ± 0.25 | 87.07 ± 0.25 | 87.13 ± 0.25 | 238 |
  | mlp | 93.56 ± 0.05 | 88.39 ± 0.06 | 88.36 ± 0.05 | 88.35 ± 0.05 | 88.41 ± 0.05 | **148** |
 
-# # Test on MNIST + Fashion-MNIST
+# Test on MNIST + Fashion-MNIST
+BSRBF-KAN gets the best results on both datasets if counting the average values.
 
 # References
 * https://github.com/Blealtan/efficient-kan
