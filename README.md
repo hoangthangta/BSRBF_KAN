@@ -89,7 +89,7 @@ We trained the models in **15 epochs on GeForce RTX 3060 Ti** (with other defaul
  | mexican_hat (Wav_KAN) | 2 (768, 64, 10) | 99.76 | 97.12 | - | - | - | - |
  | morlet (Wav_KAN) | 2 (768, 64, 10) | 96.01 | 87.97 | - | - | - | - |
  | dog (Wav_KAN) | 2 (768, 64, 10) | 99.43 | **97.68** | - | - | - | - |
- | meyer (Wav_KAN) | 2 (768, 64, 10) | - | ~ 92.7 | - | - | - | - |
+ | meyer (Wav_KAN) | 2 (768, 64, 10) | 97.49 | 92.36 | - | - | - | - |
 | shannon (Wav_KAN) | 2 (768, 64, 10) | - | - | - | - | - | - |
 
 # Test on Fashion-MNIST
