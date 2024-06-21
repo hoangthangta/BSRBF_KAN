@@ -90,7 +90,7 @@ We trained the models in **15 epochs on GeForce RTX 3060 Ti** (with other defaul
  | morlet (Wav_KAN) | 2 (768, 64, 10) | 96.01 | 87.97 | - | - | - | - |
  | dog (Wav_KAN) | 2 (768, 64, 10) | 99.43 | **97.68** | - | - | - | - |
  | meyer (Wav_KAN) | 2 (768, 64, 10) | 97.49 | 92.36 | - | - | - | - |
-| shannon (Wav_KAN) | 2 (768, 64, 10) | - | - | - | - | - | - |
+| shannon (Wav_KAN) | 2 (768, 64, 10) | 99.63 | 97.07 | - | - | - | - |
 
 # Test on Fashion-MNIST
 Training on MNIST seems easy, making it difficult to compare BSRBF-KAN accurately to other models; therefore, we would like to work on Fashion-MNIST. We trained the models in **25 epochs on GeForce RTX 3060 Ti** (with other default parameters; see Commands). Like MNIST, BSRBF_KAN is also stable and converges the best. FastKAN achieves the best performance.
