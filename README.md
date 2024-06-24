@@ -12,7 +12,7 @@ Our paper is available at https://arxiv.org/abs/2406.11173.
 * tqdm==4.66.4
   
 # How to combine
-We do layer normalization for the input and then combine 3 outputs (base_output, bs_output, and rbf_output).
+We start with layer normalization of the input and then merge three outputs: base_output, bs_output, and rbf_output. Although this approach appears simple, finding an optimal combined KAN is a time-consuming task. We hope our research will lead to the development of various combined KANs using mathematical functions.
 
 ```
 def forward(self, x):
