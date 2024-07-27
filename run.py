@@ -101,10 +101,6 @@ def run(model_name = 'bsrbf_kan', batch_size = 64, n_input = 28*28, epochs = 10,
     elif(model_name == 'mlp'):
         model = MLP([n_input, n_hidden, n_output])
         #model = MLPModel()
-    elif(model_name == 'cnn'):
-        model = CNNModel()
-    elif(model_name == 'brd_kan'):
-        model = BRD_KAN([n_input, n_hidden, n_output])
     else:
         model = EfficientKAN([n_input, n_hidden, n_output], grid_size = grid_size, spline_order = spline_order)
     model.to(device)
@@ -226,14 +222,16 @@ if __name__ == "__main__":
     
     main(args)
     
-#python run.py --mode "train" --model_name "bsrbf_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --grid_size 5 --spline_order 3 --ds_name "fashion_mnist"
+#python run.py --mode "train" --model_name "bsrbf_kan" --epochs 25 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --grid_size 5 --spline_order 3 --ds_name "fashion_mnist"
 
-#python run.py --mode "train" --model_name "efficient_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --grid_size 5 --spline_order 3
+#python run.py --mode "train" --model_name "efficient_kan" --epochs 25 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --grid_size 5 --spline_order 3 --ds_name "fashion_mnist"
 
-#python run.py --mode "train" --model_name "fast_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --num_grids 8
+#python run.py --mode "train" --model_name "fast_kan" --epochs 25 --batch_size 64 --n_input 3072 --n_hidden 64 --n_output 10 --num_grids 8 --ds_name "fashion_mnist"
 
-#python run.py --mode "train" --model_name "faster_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --num_grids 8
+#python run.py --mode "train" --model_name "faster_kan" --epochs 25 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --num_grids 8 --ds_name "fashion_mnist"
 
-#python run.py --mode "train" --model_name "gottlieb_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --spline_order 3
+#python run.py --mode "train" --model_name "gottlieb_kan" --epochs 25 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --spline_order 3 --ds_name "fashion_mnist"
 
-#python run.py --mode "train" --model_name "mlp" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --ds_name "fashion_mnist"
+#python run.py --mode "train" --model_name "mlp" --epochs 35 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --ds_name "mnist"
+
+#python run.py --mode "train" --model_name "brd_kan" --epochs 25 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --grid_size 5 --spline_order 3 --ds_name "fashion_mnist" --device "cpu"
