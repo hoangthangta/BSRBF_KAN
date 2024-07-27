@@ -32,14 +32,27 @@ def count_parameters(model):
     return total_params
 
 def run(model_name = 'bsrbf_kan', batch_size = 64, n_input = 28*28, epochs = 10, n_output = 10, n_hidden = 64, \
-        grid_size = 5, num_grids = 8, spline_order = 3, ds_name = 'mnist'):
+        grid_size = 5, num_grids = 8, spline_order = 3, ds_name = 'mnist', n_examples = -1):
 
     start = time.time()
-    # Load MNIST
-    transform = transforms.Compose(
-        [transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,))]
-    )
     
+    # FashionMNIST
+    #Mean: 0.28604060411453247
+    #Standard Deviation: 0.3530242443084717
+
+    # MNIST
+    #Mean: 0.13066047430038452
+    #Standard Deviation: 0.30810782313346863
+    
+    # Sign Language MNIST
+    # Mean: tensor([0.6257]), Std: tensor([0.1579])
+    
+    transform = transforms.Compose([
+        transforms.ToTensor(),
+        transforms.Normalize((0.5,), (0.5,))
+        ])
+        
+    trainset, valset = [], []
     if (ds_name == 'mnist'):
         trainset = torchvision.datasets.MNIST(
             root="./data", train=True, download=True, transform=transform
@@ -56,7 +69,14 @@ def run(model_name = 'bsrbf_kan', batch_size = 64, n_input = 28*28, epochs = 10,
         valset = torchvision.datasets.FashionMNIST(
             root="./data", train=False, download=True, transform=transform
         )
+    elif(ds_name == 'sl_mnist'):
+        from ds_model import SignLanguageMNISTDataset
+        trainset = SignLanguageMNISTDataset(csv_file='data\SignMNIST\sign_mnist_train.csv', transform=transform)
+        valset = SignLanguageMNISTDataset(csv_file='data\SignMNIST\sign_mnist_test.csv', transform=transform)
 
+    if (n_examples != -1):
+        trainset = torch.utils.data.Subset(trainset, range(n_examples))
+    
     trainloader = DataLoader(trainset, batch_size=batch_size, shuffle=False)
     valloader = DataLoader(valset, batch_size=batch_size, shuffle=False)
 
@@ -80,6 +100,11 @@ def run(model_name = 'bsrbf_kan', batch_size = 64, n_input = 28*28, epochs = 10,
         model = GottliebKAN([n_input, n_hidden, n_output], spline_order = spline_order)
     elif(model_name == 'mlp'):
         model = MLP([n_input, n_hidden, n_output])
+        #model = MLPModel()
+    elif(model_name == 'cnn'):
+        model = CNNModel()
+    elif(model_name == 'brd_kan'):
+        model = BRD_KAN([n_input, n_hidden, n_output])
     else:
         model = EfficientKAN([n_input, n_hidden, n_output], grid_size = grid_size, spline_order = spline_order)
     model.to(device)
@@ -87,15 +112,19 @@ def run(model_name = 'bsrbf_kan', batch_size = 64, n_input = 28*28, epochs = 10,
     print('parameters: ', count_parameters(model))
     
     #return
+    
     # Define optimizer
-    optimizer = optim.AdamW(model.parameters(), lr=1e-3, weight_decay=1e-4)
+    lr = 1e-3
+    wc = 1e-4
+    optimizer = optim.AdamW(model.parameters(), lr=lr, weight_decay=wc)
+    
     # Define learning rate scheduler
     scheduler = optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.8)
+    
     # Define loss
     criterion = nn.CrossEntropyLoss()
 
     best_epoch, best_accuracy = 0, 0
-
     y_true = [labels.tolist() for images, labels in valloader]
     y_true = sum(y_true, [])
     
@@ -107,7 +136,7 @@ def run(model_name = 'bsrbf_kan', batch_size = 64, n_input = 28*28, epochs = 10,
             for i, (images, labels) in enumerate(pbar):
                 images = images.view(-1, n_input).to(device)
                 optimizer.zero_grad()
-                output = model(images)
+                output = model(images.to(device))
                 loss = criterion(output, labels.to(device))
                 train_loss += loss.item()
                 loss.backward()
@@ -127,9 +156,11 @@ def run(model_name = 'bsrbf_kan', batch_size = 64, n_input = 28*28, epochs = 10,
         with torch.no_grad():
             for images, labels in valloader:
                 images = images.view(-1, n_input).to(device)
-                output = model(images)
+                output = model(images.to(device))
                 val_loss += criterion(output, labels.to(device)).item()
+                
                 y_pred += output.argmax(dim=1).tolist()
+
                 val_accuracy += ((output.argmax(dim=1) == labels.to(device)).float().mean().item())
        
         # calculate F1, Precision and Recall
@@ -153,8 +184,8 @@ def run(model_name = 'bsrbf_kan', batch_size = 64, n_input = 28*28, epochs = 10,
             best_epoch = epoch
             torch.save(model, output_path + '/' + saved_model_name)
                     
-        print(f"Epoch {epoch}, Train Loss: {train_loss}, Train Accuracy: {train_accuracy}")
-        print(f"Epoch {epoch}, Val Loss: {val_loss}, Val Accuracy: {val_accuracy}")
+        print(f"Epoch {epoch}, Train Loss: {train_loss:.6f}, Train Accuracy: {train_accuracy:.6f}")
+        print(f"Epoch {epoch}, Val Loss: {val_loss:.6f}, Val Accuracy: {val_accuracy:.6f}, F1: {f1:.6f}, Precision: {pre:.6f}, Recall: {recall:.6f}")
         
         write_single_dict_to_jsonl_file(output_path + '/' + saved_model_history, {'epoch':epoch, 'val_accuracy':val_accuracy, 'train_accuracy':train_accuracy, 'f1_macro':f1, 'pre_macro':pre, 're_macro':recall, 'best_epoch':best_epoch, 'val_loss': val_loss, 'train_loss':train_loss}, file_access = 'a')
     
@@ -166,7 +197,7 @@ def main(args):
     if (args.mode == 'train'):
         run(model_name = args.model_name, batch_size = args.batch_size, epochs = args.epochs, \
             n_input = args.n_input, n_output = args.n_output, n_hidden = args.n_hidden, \
-            grid_size = args.grid_size, num_grids = args.num_grids, spline_order = args.spline_order, ds_name = args.ds_name)
+            grid_size = args.grid_size, num_grids = args.num_grids, spline_order = args.spline_order, ds_name = args.ds_name, n_examples =  args.n_examples)
                     
 if __name__ == "__main__":
 
@@ -184,6 +215,8 @@ if __name__ == "__main__":
     parser.add_argument('--num_grids', type=int, default=8)
     parser.add_argument('--spline_order', type=int, default=3)
     parser.add_argument('--ds_name', type=str, default='mnist')
+    parser.add_argument('--n_examples', type=int, default=-1)
+    
     args = parser.parse_args()
     
     global device
