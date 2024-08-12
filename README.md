@@ -65,7 +65,7 @@ def forward(self, x):
 ```python run.py --mode "train" --ds_name "mnist" --model_name "mlp" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10```
 
 # Test on MNIST + Fashion MNIST + SL MNIST
-We trained the models **on GeForce RTX 3060 Ti** (with other default parameters; see Commands). The results are in our updated paper, ** we are working to update them**.
+We trained the models **on GeForce RTX 3060 Ti** (with other default parameters; see Commands). The results are in our updated paper, **we are working to update them**.
 
 # References
 * https://github.com/Blealtan/efficient-kan
