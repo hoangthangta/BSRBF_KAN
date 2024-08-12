@@ -52,17 +52,17 @@ def forward(self, x):
 * *n_examples*: the number of examples in the training set used for training (default: -1, mean use all training data)
 
 ## Commands
-```python run.py --mode "train" --ds_name "mnist" --model_name "bsrbf_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --grid_size 5 --spline_order 3```
+```python run.py --mode "train" --ds_name "mnist" --model_name "bsrbf_kan" --epochs 25 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --grid_size 5 --spline_order 3```
 
-```python run.py --mode "train" --ds_name "mnist" --model_name "efficient_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --grid_size 5 --spline_order 3```
+```python run.py --mode "train" --ds_name "mnist" --model_name "efficient_kan" --epochs 25 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --grid_size 5 --spline_order 3```
 
-```python run.py --mode "train" --ds_name "mnist" --model_name "fast_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --num_grids 8```
+```python run.py --mode "train" --ds_name "mnist" --model_name "fast_kan" --epochs 25 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --num_grids 8```
 
-```python run.py --mode "train" --ds_name "mnist" --model_name "faster_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --num_grids 8```
+```python run.py --mode "train" --ds_name "mnist" --model_name "faster_kan" --epochs 25 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --num_grids 8```
 
-```python run.py --mode "train" --ds_name "mnist" --model_name "gottlieb_kan" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --spline_order 3```
+```python run.py --mode "train" --ds_name "mnist" --model_name "gottlieb_kan" --epochs 25 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10 --spline_order 3```
 
-```python run.py --mode "train" --ds_name "mnist" --model_name "mlp" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10```
+```python run.py --mode "train" --ds_name "mnist" --model_name "mlp" --epochs 25 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10```
 
 # Test on MNIST + Fashion MNIST + SL MNIST
 We trained the models **on GeForce RTX 3060 Ti** (with other default parameters; see Commands). The results are in our updated paper, **we are working to update them**.
