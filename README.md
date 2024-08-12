@@ -64,7 +64,7 @@ def forward(self, x):
 
 ```python run.py --mode "train" --ds_name "mnist" --model_name "mlp" --epochs 15 --batch_size 64 --n_input 784 --n_hidden 64 --n_output 10```
 
-# Test on MNIST
+# Test on MNIST + Fashion MNIST + SL MNIST
 We trained the models **on GeForce RTX 3060 Ti** (with other default parameters; see Commands). Check our updated paper to see the results.
 
 # References
