@@ -1,3 +1,5 @@
+For a new KAN which is based on function combinations, see: https://github.com/hoangthangta/FC_KAN
+
 # BSRBF_KAN
 
 In this repo, we use Efficient KAN (https://github.com/Blealtan/efficient-kan/ and FAST-KAN (https://github.com/ZiyaoLi/fast-kan/) to create BSRBF_KAN, which combines B-Splines (**BS**) and Radial Basis Functions (**RBF**) for Kolmogorov-Arnold Networks (KANs). 
