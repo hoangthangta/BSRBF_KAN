@@ -6,7 +6,7 @@ In this repo, we use Efficient KAN (https://github.com/Blealtan/efficient-kan/ a
 
 Our paper's name is misspelled: "BSRBF-KAN: A combination of B-splines and Radial Basi~~c~~s (**s, not c**) Functions in Kolmogorov-Arnold Networks." Please cite our paper correctly; thank you!
 
-Our paper is available at https://arxiv.org/abs/2406.11173 (**BSRBF-KAN: A combination of B-splines and Radial Basis Functions in Kolmogorov-Arnold Networks**).
+Our paper is available at https://arxiv.org/abs/2406.11173 (**BSRBF-KAN: A combination of B-splines and Radial Basis Functions in Kolmogorov-Arnold Networks**) or https://www.researchgate.net/publication/381471539_BSRBF-KAN_A_combination_of_B-splines_and_Radial_Basis_Functions_in_Kolmogorov-Arnold_Networks.
 
 # Requirements 
 * numpy==1.26.4
