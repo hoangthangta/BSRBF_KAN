@@ -81,6 +81,8 @@ We trained the models **on GeForce RTX 3060 Ti** (with other default parameters;
 # Acknowledgements
 We especially thank the contributions of https://github.com/Blealtan/efficient-kan, https://github.com/ZiyaoLi/fast-kan/, and https://github.com/seydi1370/Basis_Functions for their great work in KANs.
 
+Also, give me a star if you like this repo. Thanks!
+
 # Paper
 ```
 @misc{ta2024bsrbfkan,
