@@ -8,7 +8,7 @@ Our paper's name is misspelled: "BSRBF-KAN: A combination of B-splines and Radia
 
 Our paper is available at https://arxiv.org/abs/2406.11173 (**BSRBF-KAN: A combination of B-splines and Radial Basis Functions in Kolmogorov-Arnold Networks**) or https://www.researchgate.net/publication/381471539_BSRBF-KAN_A_combination_of_B-splines_and_Radial_Basis_Functions_in_Kolmogorov-Arnold_Networks.
 
-The official version is in: https://link.springer.com/chapter/10.1007/978-981-96-4288-5_1
+The official version is in: https://link.springer.com/chapter/10.1007/978-981-96-4288-5_1.
 
 # Requirements 
 * numpy==1.26.4
