@@ -1,4 +1,4 @@
-**For a new KAN that is based on function combinations (also include BSRBF-KAN and better code), see: https://github.com/hoangthangta/FC_KAN.**
+**For novel KANs, see: https://github.com/hoangthangta/All-KAN.**
 
 # BSRBF_KAN
 
