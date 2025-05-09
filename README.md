@@ -88,7 +88,7 @@ Also, give me a star if you like this repo. Thanks!
 # Paper
 ```
 @inproceedings{ta2024bsrbf,
-  title={BSRBF-KAN: a combination of B-splines and radial basis functions in Kolmogorov-Arnold networks},
+  title={BSRBF-KAN: A Combination of B-Splines and Radial Basis Functions in Kolmogorov-Arnold Networks},
   author={Ta, Hoang-Thang},
   booktitle={International Symposium on Information and Communication Technology},
   pages={3--15},
