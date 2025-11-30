@@ -1,4 +1,4 @@
-**For novel KANs, see: https://github.com/hoangthangta/All-KAN.**
+**For more KANs, see: https://github.com/hoangthangta/All-KAN.**
 
 # BSRBF_KAN
 
@@ -79,6 +79,7 @@ We trained the models **on GeForce RTX 3060 Ti** (with other default parameters;
 * https://github.com/ZiyaoLi/fast-kan/
 * https://github.com/seydi1370/Basis_Functions
 * https://github.com/KindXiaoming/pykan (the original KAN)
+* https://github.com/mintisan/awesome-kan
 
 # Acknowledgements
 We especially thank the contributions of https://github.com/Blealtan/efficient-kan, https://github.com/ZiyaoLi/fast-kan/, and https://github.com/seydi1370/Basis_Functions for their great work in KANs.
