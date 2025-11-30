@@ -2,7 +2,7 @@
 
 # BSRBF_KAN
 
-In this repo, we use Efficient KAN (https://github.com/Blealtan/efficient-kan/ and FAST-KAN (https://github.com/ZiyaoLi/fast-kan/) to create BSRBF_KAN, which combines B-Splines (**BS**) and Radial Basis Functions (**RBF**) for Kolmogorov-Arnold Networks (KANs). 
+In this repo, we use Efficient KAN (https://github.com/Blealtan/efficient-kan/ and FastKAN (https://github.com/ZiyaoLi/fast-kan/) to create BSRBF_KAN, which combines B-Splines (**BS**) and Radial Basis Functions (**RBF**) for Kolmogorov-Arnold Networks (KANs). 
 
 Our paper's name is misspelled: "BSRBF-KAN: A combination of B-splines and Radial Basi~~c~~s (**s, not c**) Functions in Kolmogorov-Arnold Networks." Please cite our paper correctly; thank you!
 
